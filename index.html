@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abhishek Kadupatil | Consultant</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+	<style>
+	/* ==============================
+   GLOBAL STYLES
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #1f2937; /* dark gray */
+    background-color: #ffffff;
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    color: #111827;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #38bdf8;
+    margin-top: 8px;
+    border-radius: 4px;
+}
+p {
+    margin-bottom: 15px;
+}
+
+/* ==============================
+   HEADER
+================================ */
+.header {
+    background: linear-gradient(135deg, #2563eb, #38bdf8);
+    color: #ffffff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.subtitle {
+    font-size: 18px;
+    margin-top: 12px;
+    color: #e0f2fe;
+}
+
+
+/* ==============================
+   SECTIONS
+================================ */
+.section {
+    padding: 70px 0;
+}
+
+.section-light {
+    background-color: #f0f9ff;
+}
+
+
+/* ==============================
+   SKILLS
+================================ */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.skills-grid h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.skills-grid ul {
+    list-style: none;
+}
+
+.skills-grid li {
+    padding-left: 15px;
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.skills-grid li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #2563eb; /* blue accent */
+}
+.skills-grid > div {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-grid > div:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.10);
+}
+
+
+/* ==============================
+   EXPERIENCE
+================================ */
+.experience {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.experience h3 {
+    font-size: 20px;
+}
+
+.experience span {
+    display: block;
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 10px;
+}
+
+.experience ul {
+    padding-left: 20px;
+}
+
+.experience li {
+    margin-bottom: 8px;
+}
+
+/* ==============================
+   PROJECTS
+================================ */
+.section ul li {
+    margin-bottom: 12px;
+}
+
+/* ==============================
+   CONTACT
+================================ */
+.section p a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.section p a:hover {
+    text-decoration: underline;
+}
+
+/* ==============================
+   FOOTER
+================================ */
+.footer {
+    background-color: #0f172a;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+/* ==============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .section {
+        padding: 50px 0;
+    }
+}
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    border: 4px solid rgba(255, 255, 255, 0.6);
+}
+.btn-primary {
+    margin-top: 25px;
+    padding: 12px 28px;
+    background: #ffffff;
+    color: #2563eb;
+    font-weight: 600;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #e0f2fe;
+    transform: translateY(-2px);
+}
+.animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.animate.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.highlights {
+    list-style: none;
+    padding-left: 0;
+}
+
+.highlights li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #1f2937;
+}
+
+.highlights li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #10b981; /* positive green */
+}
+.projects {
+    list-style: none;
+    padding-left: 0;
+}
+
+.projects li {
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    border-left: 4px solid #2563eb; /* corporate accent */
+    background: #f8fafc;
+    border-radius: 8px;
+}
+
+.projects li strong {
+    font-size: 16px;
+    color: #111827;
+}
+.footer {
+    background: #1f2937; /* dark slate */
+    color: #f8fafc; /* light text */
+    padding: 25px 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-left p {
+    margin: 4px 0;
+}
+
+.footer-right {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.footer-link {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #10b981; /* positive green hover */
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #2563eb; /* corporate blue */
+    color: #ffffff;
+    font-size: 24px;
+    padding: 12px 16px;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+#backToTop:hover {
+    background: #10b981; /* positive green hover */
+    transform: translateY(-2px);
+}
+
+/* Show button when scrolling */
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+	</style>
+</head>
+<body>
+
+    <!-- HEADER -->
+<header class="header">
+    <div class="container hero">
+        <img src="assets/images/profile.jpg" alt="Profile Photo" class="profile-pic" />
+
+        <h1>Abhishek Kadupatil</h1>
+        <p class="subtitle">
+           Consultant
+        </p>
+
+        <a href="assets/resume.pdf" class="btn-primary" download>
+            Download Resume
+        </a>
+    </div>
+</header>
+
+
+    <!-- ABOUT -->
+    <section class="section animate">
+    <div class="container">
+        <h2>About Me</h2>
+
+        <p>
+            I am a full stack software professional with over <strong>6+ years of experience</strong>
+            in web application development, primarily within the <strong>BFSI domain</strong>.
+            I am currently working as a <strong>Consultant</strong> at Mindcraft Softwares Pvt. Ltd.,
+            where I am assigned the role of <strong>Team Lead</strong> for a client engagement with
+            SBI Life Insurance.
+        </p>
+
+        <p>
+            I began my career as a Java trainee at Clover Infotech Pvt. Ltd., where I was assigned
+            to Bajaj Finserv. After a year, I was promoted to Software Engineer and continued my
+            association with Clover for nearly four years. During this period, I spent over
+            three years working with Bajaj Finserv and later transitioned to SBI Life Insurance
+            for a new engagement. Following this, I moved to Mindcraft Softwares Pvt. Ltd. on the
+            recommendation of my client, where I was retained as a Consultant with team lead
+            responsibilities. I have been associated with SBI Life Insurance for the past three
+            years through Mindcraft.
+        </p>
+
+        <p>
+            Throughout my career, I have worked across the complete software development lifecycle,
+            starting from requirement understanding and design to development, deployment, and
+            production support. My technical journey began with Java and expanded to include
+            JavaScript, jQuery, and Oracle WebCenter Sites as a CMS platform, along with exposure
+            to Linux environments, application servers, and system architecture. I have also been
+            actively involved in stakeholder communication across technical and business teams.
+        </p>
+
+        <p>
+            From a leadership perspective, I have handled key ownership roles at client sites.
+            At Bajaj Finserv, I worked as a Vertical Lead for the B2B module, leading a team of
+            five members. Later, at SBI Life Insurance, I was entrusted with the role of Team Lead
+            for a team of ten members. My responsibilities included technical decision-making,
+            delivery ownership, mentoring team members, and regular coordination with senior
+            stakeholders including Managers, AVPs, VPs, and SVPs. Based on my performance and
+            ownership, I was retained by SBI Life Insurance through Mindcraft.
+        </p>
+
+        <p>
+            Technically, I have a strong command over Oracle WebCenter Sites, including solution
+            design, frontend UX integration, and Spring-based backend development. I also possess
+            a good understanding of enterprise server architecture, databases, WebLogic servers,
+            and Solr-based applications. I focus on building stable, maintainable, and scalable
+            solutions aligned with business objectives.
+        </p>
+
+        <p>
+            In addition to technical delivery, I bring a strong client and business orientation.
+            I have worked closely with product owners, business analysts, managers, and senior
+            leadership. I was also part of a critical SBI Life Insurance initiative that
+            contributed to the organization achieving a Guinness World Record. Across all my
+            engagements, I have consistently demonstrated ownership and accountability for the
+            solutions I deliver.
+        </p>
+
+        <p>
+            At this stage of my career, I am looking to transition into <strong>higher leadership
+            roles</strong> such as Assistant Manager or Manager, where I can take on broader
+            responsibilities, lead larger teams, and contribute to challenging initiatives that
+            offer long-term growth and impact.
+        </p>
+    </div>
+</section>
+
+<section class="section section-light animate">
+    <div class="container">
+        <h2>Career Highlights</h2>
+        <ul class="highlights">
+            <li>6+ years of experience in BFSI domain (Full Stack Web Applications)</li>
+            <li>Team Lead & Consultant at Mindcraft Software, assigned to SBI Life Insurance</li>
+            <li>Led teams of 5–10 engineers across multiple client projects</li>
+            <li>Vertical Lead for B2B module at Bajaj Finserv</li>
+            <li>Key contributor to SBI Life Insurance project that achieved Guinness World Record</li>
+            <li>Strong expertise in Oracle WebCenter Sites, Java, Spring, Frontend, Databases, and Server Architecture</li>
+        </ul>
+    </div>
+</section>
+
+
+
+    <!-- SKILLS -->
+<section class="section section-light animate">
+    <div class="container">
+        <h2>Core Skills</h2>
+        <div class="skills-grid">
+            <div>
+                <h3>Programming & Frameworks</h3>
+                <ul>
+                    <li>Java (Core, Spring)</li>
+                    <li>JavaScript, jQuery</li>
+                    <li>Oracle WebCenter Sites CMS</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Frontend & UX</h3>
+                <ul>
+                    <li>HTML5, CSS3</li>
+                    <li>Responsive Design</li>
+                    <li>Frontend integration with CMS</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Databases & Servers</h3>
+                <ul>
+                    <li>Oracle DB, SQL</li>
+                    <li>Linux Servers & Architecture</li>
+                    <li>WebLogic, Solr</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Leadership & Management</h3>
+                <ul>
+                    <li>Team Lead for 10-member teams</li>
+                    <li>Vertical Lead experience (B2B module)</li>
+                    <li>Client & stakeholder coordination (AVPs, VPs, SVPs)</li>
+                    <li>Mentoring & process improvement</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- EXPERIENCE -->
+<section class="section animate">
+    <div class="container">
+        <h2>Professional Experience</h2>
+
+        <div class="experience">
+            <h3>Consultant / Team Lead</h3>
+            <span>Mindcraft Softwares Pvt. Ltd. | SBI Life Insurance</span>
+            <ul>
+                <li>Lead a team of 10 engineers, ensuring timely delivery of complex modules.</li>
+                <li>Coordinated with Managers, AVPs, VPs, and SVPs for technical and business decisions.</li>
+                <li>Owned full stack development, including architecture, backend, frontend, and deployment.</li>
+                <li>Implemented process improvements and mentoring programs for junior developers.</li>
+            </ul>
+        </div>
+
+        <div class="experience">
+            <h3>Software Engineer / Vertical Lead</h3>
+            <span>Clover Infotech Pvt. Ltd. | Bajaj Finserv / SBI Life Insurance</span>
+            <ul>
+                <li>Promoted from Java Trainee to Software Engineer within 1 year.</li>
+                <li>Acted as Vertical Lead for B2B module, leading 5-member team.</li>
+                <li>Designed and implemented scalable web application features across full stack.</li>
+                <li>Interfaced with stakeholders across multiple levels to ensure delivery quality.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+    <!-- PROJECTS -->
+    <section class="section animate">
+    <div class="container">
+        <h2>Key Projects</h2>
+        <ul class="projects">
+            <li>
+                <strong>SBI Life Insurance – Web Portal Module</strong><br>
+                Role: Team Lead (Consultant)<br>
+                Led a 10-member team to deliver a high-impact module. Managed stakeholder communication
+                across multiple levels (AVPs, VPs, SVPs). Contributed to a project that achieved a
+                Guinness World Record.
+            </li>
+            <li>
+                <strong>Bajaj Finserv – B2B Module</strong><br>
+                Role: Vertical Lead<br>
+                Led a team of 5 engineers, implemented full stack solutions in Java and Oracle WebCenter Sites,
+                and coordinated with client managers to ensure timely delivery and quality.
+            </li>
+            <li>
+                <strong>Full Stack Development Projects – Various Clients</strong><br>
+                Delivered end-to-end solutions including Java backend, frontend UX integration, database design,
+                and server deployment (Linux, WebLogic, Solr). Owned the complete development lifecycle.
+            </li>
+        </ul>
+    </div>
+</section>
+
+
+    <!-- CONTACT -->
+    <section class="section animate">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>Email: abhishekkadupatil93@gmail.com</p>
+            <p>LinkedIn: linkedin.com/in/abhishek-kadupatil</p>
+            <p>GitHub: github.com/abhishekkadupatil93</p>
+        </div>
+    </section>
+
+<footer class="footer">
+    <div class="container footer-content">
+        <div class="footer-left">
+            <p>© 2026 Abhishek Kadupatil</p>
+            <p>Full Stack Consultant | Team Lead</p>
+        </div>
+
+        <div class="footer-right">
+            <a href="mailto:abhishek@example.com" class="footer-link">Email</a>
+            <a href="https://www.linkedin.com/in/abhishek-kadupatil" target="_blank" class="footer-link">LinkedIn</a>
+            <a href="https://github.com/abhishekkadupatil" target="_blank" class="footer-link">GitHub</a>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to Top Button -->
+<a href="#" id="backToTop" title="Back to Top">↑</a>
+
+<script>
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        backToTop.classList.add("show");
+    } else {
+        backToTop.classList.remove("show");
+    }
+});
+
+// Smooth scroll
+backToTop.addEventListener("click", e => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+</script>
+</body>
+<script>
+const observer = new IntersectionObserver(
+    entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    },
+    { threshold: 0.15 }
+);
+
+document.querySelectorAll(".animate").forEach(el => {
+    observer.observe(el);
+});
+
+</script>
+</html>
